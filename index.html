@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Dork</title>
+</head>
+<body>
+  <div id="links"></div>
+  
+  <script>
+    function promptForDomain() {
+      var domain = prompt('Please enter a domain:');
+      if (domain) {
+          // Add Directory Listing link
+          var link1 = document.createElement('a');
+          link1.href = 'https://www.google.com/search?q=site:' + domain + '%20intitle:index.of';
+          link1.textContent = 'Directory Listing';
+          link1.target = '_blank';
+          document.getElementById('links').appendChild(link1);
+          document.getElementById('links').appendChild(document.createElement('br'));
+          
+          // Add Config Files link
+          var link2 = document.createElement('a');
+          link2.href = 'https://www.google.com/search?q=site:' + domain + '%20ext:xml%20|%20ext:conf%20|%20ext:cnf%20|%20ext:reg%20|%20ext:inf%20|%20ext:rdp%20|%20ext:cfg%20|%20ext:txt%20|%20ext:ora%20|%20ext:ini';
+          link2.textContent = 'Config Files';
+          link2.target = '_blank';
+          document.getElementById('links').appendChild(link2);
+          document.getElementById('links').appendChild(document.createElement('br'));
+          
+          // Add Database Files link
+          var link3 = document.createElement('a');
+          link3.href = 'https://www.google.com/search?q=site:' + domain + '%20ext:sql%20|%20ext:dbf%20|%20ext:mdb';
+          link3.textContent = 'Database Files';
+          link3.target = '_blank';
+          document.getElementById('links').appendChild(link3);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add WordPress link
+          var link4 = document.createElement('a');
+          link4.href = 'https://www.google.com/search?q=site:' + domain + '%20inurl:wp-%20|%20inurl:wp-content%20|%20inurl:plugins%20|%20inurl:uploads%20|%20inurl:themes%20|%20inurl:download';
+          link4.textContent = 'WordPress';
+          link4.target = '_blank';
+          document.getElementById('links').appendChild(link4);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Log Files link
+          var link5 = document.createElement('a');
+          link5.href = 'https://www.google.com/search?q=site:' + domain + '%20ext:log';
+          link5.textContent = 'Log Files';
+          link5.target = '_blank';
+          document.getElementById('links').appendChild(link5);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Backup/Old Files link
+          var link6 = document.createElement('a');
+          link6.href = 'https://www.google.com/search?q=site:' + domain + '%20ext:bkf%20|%20ext:bkp%20|%20ext:bak%20|%20ext:old%20|%20ext:backup';
+          link6.textContent = 'Backup/Old Files';
+          link6.target = '_blank';
+          document.getElementById('links').appendChild(link6);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Login Pages link
+          var link7 = document.createElement('a');
+          link7.href = 'https://www.google.com/search?q=site:' + domain + '%20inurl:login%20|%20inurl:signin%20|%20intitle:Login%20|%20intitle:signin%20|%20inurl:auth';
+          link7.textContent = 'Login Pages';
+          link7.target = '_blank';
+          document.getElementById('links').appendChild(link7);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Sql Error link
+          var link8 = document.createElement('a');
+          link8.href = 'https://www.google.com/search?q=site:' + domain + '%20intext:"sql syntax near"%20|%20intext:"syntax error has occurred"%20|%20intext:"incorrect syntax near"%20|%20intext:"unexpected end of SQL command"%20|%20intext:"Warning: mysql_connect()"%20|%20intext:"Warning: mysql_query()"%20|%20intext:"Warning: pg_connect()"';
+          link8.textContent = 'Sql Error';
+          link8.target = '_blank';
+          document.getElementById('links').appendChild(link8);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Exposed Docs link
+          var link9 = document.createElement('a');
+          link9.href = 'https://www.google.com/search?q=site:' + domain + '%20ext:doc%20|%20ext:docx%20|%20ext:odt%20|%20ext:pdf%20|%20ext:rtf%20|%20ext:sxw%20|%20ext:psw%20|%20ext:ppt%20|%20ext:pptx%20|%20ext:pps%20|%20ext:csv';
+          link9.textContent = 'Exposed Docs';
+          link9.target = '_blank';
+          document.getElementById('links').appendChild(link9);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add phpinfo() link
+          var link10 = document.createElement('a');
+          link10.href = 'https://www.google.com/search?q=site:' + domain + '%20ext:php%20intitle:phpinfo%20\'published%20by%20the%20PHP%20Group\'';
+          link10.textContent = 'phpinfo()';
+          link10.target = '_blank';
+          document.getElementById('links').appendChild(link10);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Find Backdoor link
+          var link11 = document.createElement('a');
+          link11.href = 'https://www.google.com/search?q=site:' + domain + '%20inurl:shell%20|%20inurl:backdoor%20|%20inurl:wso%20|%20inurl:cmd%20|%20shadow%20|%20passwd%20|%20boot.ini%20|%20inurl:backdoor';
+          link11.textContent = 'Find Backdoor';
+          link11.target = '_blank';
+          document.getElementById('links').appendChild(link11);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Open Redirect link
+          var link12 = document.createElement('a');
+          link12.href = 'https://www.google.com/search?q=site:' + domain + '%20inurl:redir%20|%20inurl:url%20|%20inurl:redirect%20|%20inurl:return%20|%20inurl:src=http%20|%20inurl:r=http';
+          link12.textContent = 'Open Redirect';
+          link12.target = '_blank';
+          document.getElementById('links').appendChild(link12);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add 3rd Party Exposure link
+          var link13 = document.createElement('a');
+          link13.href = 'https://www.google.com/search?q=site:http://ideone.com%20|%20site:http://codebeautify.org%20|%20site:http://codeshare.io%20|%20site:http://codepen.io%20|%20site:http://repl.it%20|%20site:http://justpaste.it%20|%20site:http://pastebin.com%20|%20site:http://jsfiddle.net%20|%20site:http://trello.com%20|%20site:*.atlassian.net%20|%20site:bitbucket.org%20"'+ domain + '"';
+          link13.textContent = '3rd Party Exposure';
+          link13.target = '_blank';
+          document.getElementById('links').appendChild(link13);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Find in Pastebin link
+          var link14 = document.createElement('a');
+          link14.href = 'https://www.google.com/search?q=site:pastebin.com%20"' + domain + '"';
+          link14.textContent = 'Find in Pastebin';
+          link14.target = '_blank';
+          document.getElementById('links').appendChild(link14);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Subdomains link
+          var link15 = document.createElement('a');
+          link15.href = 'https://crt.sh/?q=' + domain;
+          link15.textContent = 'Subdomains(crt.sh)';
+          link15.target = '_blank';
+          document.getElementById('links').appendChild(link15);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Find WordPress #2 link
+          var link16 = document.createElement('a');
+          link16.href = 'https://www.google.com/search?q=site:' + domain + '%20inurl:wp-content%20|%20inurl:wp-includes';
+          link16.textContent = 'Find WordPress #2';
+          link16.target = '_blank';
+          document.getElementById('links').appendChild(link16);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Bitbucket/Atlassian link
+          var link17 = document.createElement('a');
+          link17.href = 'https://www.google.com/search?q=site:atlassian.net%20|%20site:bitbucket.org%20"' + domain + '"';
+          link17.textContent = 'Bitbucket/Atlassian';
+          link17.target = '_blank';
+          document.getElementById('links').appendChild(link17);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add StackOverflow link
+          var link18 = document.createElement('a');
+          link18.href = 'https://www.google.com/search?q=site:stackoverflow.com%20"' + domain + '"';
+          link18.textContent = 'StackOverflow';
+          link18.target = '_blank';
+          document.getElementById('links').appendChild(link18);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add All Wayback Urls link
+          var link19 = document.createElement('a');
+          link19.href = 'https://web.archive.org/cdx/search/cdx?url=*.' + domain + '/*&output=text&fl=original&collapse=urlkey';
+          link19.textContent = 'All Wayback Urls';
+          link19.target = '_blank';
+          document.getElementById('links').appendChild(link19);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Search in GitHub link
+          var link20 = document.createElement('a');
+          link20.href = 'https://github.com/search?q=%22*.' + domain + '%22';
+          link20.textContent = 'Search in GitHub';
+          link20.target = '_blank';
+          document.getElementById('links').appendChild(link20);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add OpenBugBounty link
+          var link21 = document.createElement('a');
+          link21.href = 'https://www.openbugbounty.org/search/?search=' + domain;
+          link21.textContent = 'OpenBugBounty';
+          link21.target = '_blank';
+          document.getElementById('links').appendChild(link21);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add .git Folder link
+          var link22 = document.createElement('a');
+          link22.href = 'https://www.google.com/search?q=inurl:"/.git%20' + domain + '" -github';
+          link22.textContent = '.git Folder';
+          link22.target = '_blank';
+          document.getElementById('links').appendChild(link22);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Find .swf (Google) link
+          var link23 = document.createElement('a');
+          link23.href = 'https://www.google.com/search?q=inurl:' + domain + ' ext:swf"';
+          link23.textContent = 'Find .swf (Google)';
+          link23.target = '_blank';
+          document.getElementById('links').appendChild(link23);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add S3 Buckets link
+          var link24 = document.createElement('a');
+          link24.href = 'https://www.google.com/search?q=site:.s3.amazonaws.com%20"' + domain + '"';
+          link24.textContent = 'S3 Buckets';
+          link24.target = '_blank';
+          document.getElementById('links').appendChild(link24);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Shodan Search link
+          var link25 = document.createElement('a');
+          link25.href = 'https://www.shodan.io/search?query=' + domain;
+          link25.textContent = 'Shodan Search';
+          link25.target = '_blank';
+          document.getElementById('links').appendChild(link25);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add API (WSDL) link
+          var link26 = document.createElement('a');
+          link26.href = 'https://www.google.com/search?q=site:' + domain + '%20filetype:wsdl%20|%20filetype:WSDL%20|%20ext:svc%20|%20inurl:wsdl%20|%20Filetype:%20?wsdl%20|%20inurl:asmx?wsdl%20|%20inurl:jws?wsdl%20|%20intitle:_vti_bin/sites.asmx?wsdl%20|%20inurl:_vti_bin/sites.asmx?wsdl';
+          link26.textContent = 'API (WSDL)';
+          link26.target = '_blank';
+          document.getElementById('links').appendChild(link26);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add GIST github search link
+          var link27 = document.createElement('a');
+          link27.href = 'https://gist.github.com/search?q=*.%22' + domain + '%22';
+          link27.textContent = 'GIST github search';
+          link27.target = '_blank';
+          document.getElementById('links').appendChild(link27);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Apache Config Files link
+          var link28 = document.createElement('a');
+          link28.href = 'https://www.google.com/search?q=site:' + domain + '%20filetype:config%20"apache"';
+          link28.textContent = 'Apache Config Files';
+          link28.target = '_blank';
+          document.getElementById('links').appendChild(link28);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Install/Setup Files link
+          var link29 = document.createElement('a');
+          link29.href = 'https://www.google.com/search?q=site:' + domain + '%20inurl:readme%20|%20inurl:license%20|%20inurl:install%20|%20inurl:setup%20|%20inurl:config';
+          link29.textContent = 'Install/Setup Files';
+          link29.target = '_blank';
+          document.getElementById('links').appendChild(link29);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Apache Struts RCE link
+          var link30 = document.createElement('a');
+          link30.href = 'https://www.google.com/search?q=site:' + domain + '%20ext:action%20|%20ext:struts%20|%20ext:do';
+          link30.textContent = 'Apache Struts RCE';
+          link30.target = '_blank';
+          document.getElementById('links').appendChild(link30);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add .htaccess/phpinfo() link
+          var link31 = document.createElement('a');
+          link31.href = 'https://www.google.com/search?q=site:' + domain + '%20inurl:"/phpinfo.php"%20|%20inurl:".htaccess"';
+          link31.textContent = '.htaccess/phpinfo()';
+          link31.target = '_blank';
+          document.getElementById('links').appendChild(link31);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Security Headers link
+          var link32 = document.createElement('a');
+          link32.href = 'https://securityheaders.com/?q=' + domain + '&followRedirects=on';
+          link32.textContent = 'Security Headers';
+          link32.target = '_blank';
+          document.getElementById('links').appendChild(link32);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Source Code PublicWWW link
+          var link33 = document.createElement('a');
+          link33.href = 'https://publicwww.com/websites/%22' + domain + '%22/';
+          link33.textContent = 'Source Code PublicWWW';
+          link33.target = '_blank';
+          document.getElementById('links').appendChild(link33);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Search GitLab and Github link
+          var link34 = document.createElement('a');
+          link34.href = 'https://www.google.com/search?q=site:github.com%20|%20site:gitlab.com%20"' + domain + '"';
+          link34.textContent = 'Search GitLab and Github';
+          link34.target = '_blank';
+          document.getElementById('links').appendChild(link34);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Find .php (WayBack) link
+          var link35 = document.createElement('a');
+          link35.href = 'https://web.archive.org/cdx/search?url=' + domain + '&matchType=domain&collapse=urlkey&output=text&fl=original&filter=urlkey:.*php&limit=100000';
+          link35.textContent = 'Find .php (WayBack)';
+          link35.target = '_blank';
+          document.getElementById('links').appendChild(link35);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Find Subdomains (Google) link
+          var link36 = document.createElement('a');
+          link36.href = 'https://www.google.com/search?q=site:*.' + domain + ' -site:www.' + domain;
+          link36.textContent = 'Find Subdomains (Google)';
+          link36.target = '_blank';
+          document.getElementById('links').appendChild(link36);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Digital Ocean Space link
+          var link37 = document.createElement('a');
+          link37.href = 'https://www.google.com/search?q=site:digitaloceanspaces.com%20"' + domain + '"';
+          link37.textContent = 'Digital Ocean Space';
+          link37.target = '_blank';
+          document.getElementById('links').appendChild(link37);
+          document.getElementById('links').appendChild(document.createElement('br'));
+
+          // Add Sub-Subdomains (Google) link
+          var link38 = document.createElement('a');
+          link38.href = 'https://www.google.com/search?q=site:*.*.' + domain;
+          link38.textContent = 'Sub-Subdomains (Google)';
+          link38.target = '_blank';
+          document.getElementById('links').appendChild(link38);
+          document.getElementById('links').appendChild(document.createElement('br'));
+      }
+    }
+    promptForDomain(); 
+  </script>
+</body>
+</html>
